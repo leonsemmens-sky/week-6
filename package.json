@@ -1,0 +1,26 @@
+{
+  "name": "week-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:d1:easy:helloWorld": "jest test/d1/1-easy/hello-world --verbose --silent --runInBand",
+    "test:d1:medium:shouty": "jest test/d1/2-medium/shouty --verbose --silent --runInBand",
+    "test:d1:medium:webServer": "jest test/d1/2-medium/web-server --verbose --silent --runInBand",
+    "test:d1:hard:appServer": "jest test/d1/3-hard/app-server --verbose --silent --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sequelize": "^6.25.3",
+    "sqlite3": "^5.1.2"
+  }
+}
