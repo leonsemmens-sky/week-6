@@ -19,12 +19,13 @@ app.use(express.json());
 
 // Add a GET handler on the "/contacts/:id" route:
 //
-// - if the `id` is valid, respond with the associated contact.
+// - if the `id` is valid (i.e., there is a contact with a matching primary
+//   key), respond with the associated contact.
 //
 // - if the `id` is invalid, respond with a Not Found status code.
 
 // Add a DELETE handler on the "/contacts/:id" route which deletes the
-// associated contact. Respond with an OK status code.
+// associated contact (if it exists). Respond with an OK status code.
 
 // Add a PUT handler on the "/contacts/:id" route that expects a `firstName`
 // and `lastName` parameter, and an optional `emailAddress` parameter:
@@ -43,7 +44,7 @@ app.use(express.json());
 //
 // - if the `id` is invalid, respond with a Not Found status code.
 //
-// - if any of the parameters provided, update the associated contact and
+// - if any of the parameters are provided, update the associated contact and
 //   respond with an OK status code.
 //
 
