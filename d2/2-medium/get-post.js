@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
+// Form data is URL encoded
 app.use(express.urlencoded({ extended: false }));
 
 let data = {};
