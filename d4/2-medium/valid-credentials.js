@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 // Add a POST handler on the "/" route that always responds successfully
 // for valid JSON body parameters:
 //
@@ -27,5 +29,37 @@ const app = express();
 //   a Bad Request; we want to limit who can get sign up.
 //
 // - If both parameters are valid, respond with Created.
+
+// Resets the regex
+RegExp.prototype.reset = function () {
+	this.lastIndex = 0;
+};
+
+app.post("/", (req, res) => {
+	let body = req.body;
+	if (!body.username || !body.email) {
+		return res.sendStatus(400);
+	}
+
+	let { username, email } = body;
+
+	if (!/^[a-zA-Z]{3,10}$/g.test(username)) {
+		return res.sendStatus(400);
+	}
+
+	let emailRegex = /^([a-zA-Z]+)@example\.com$/g;
+	let localPart = emailRegex.exec(email);
+
+	emailRegex.reset();
+
+	if (
+		!emailRegex.test(email) ||
+		!localPart ||
+		localPart[1].toLowerCase() === username.toLowerCase()
+	) {
+		return res.sendStatus(400);
+	}
+	res.sendStatus(201);
+});
 
 module.exports = app;

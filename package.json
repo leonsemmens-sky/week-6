@@ -15,7 +15,10 @@
     "test:d2:hard:contacts": "jest test/d2/3-hard/contacts --verbose --silent --runInBand",
     "test:d3:easy:library": "jest test/d3/1-easy/library --verbose --silent --runInBand",
     "test:d3:medium:login": "jest test/d3/2-medium/login --verbose --silent --runInBand",
-    "test:d3:hard:blog": "jest test/d3/3-hard/blog --verbose --silent --runInBand"
+    "test:d3:hard:blog": "jest test/d3/3-hard/blog --verbose --silent --runInBand",
+    "test:d4:easy:number": "jest test/d4/1-easy/valid-number --verbose --silent --runInBand",
+    "test:d4:easy:word": "jest test/d4/1-easy/valid-word --verbose --silent --runInBand",
+    "test:d4:medium:credentials": "jest test/d4/2-medium/valid-credentials --verbose --runInBand"
   },
   "keywords": [],
   "author": "",
